@@ -107,7 +107,8 @@ const Contact = () => {
           <Button
             onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
             size="lg"
-            className="bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 text-lg font-semibold shadow-glow"
+            variant="accent"
+            className="px-8 py-4 text-lg font-semibold"
           >
             Falar no WhatsApp
           </Button>

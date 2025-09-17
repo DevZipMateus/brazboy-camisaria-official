@@ -72,7 +72,7 @@ const Header = () => {
               <Button 
                 onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
                 variant="default"
-                className="bg-gradient-primary hover:bg-primary-dark text-primary-foreground shadow-glow"
+                className="bg-white text-primary hover:bg-gray-100"
               >
                 Fale conosco
               </Button>
@@ -123,7 +123,7 @@ const Header = () => {
               <Button 
                 onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
                 variant="default"
-                className="w-full bg-gradient-primary hover:bg-primary-dark text-primary-foreground shadow-glow mt-4"
+                className="w-full bg-white text-primary hover:bg-gray-100 mt-4"
               >
                 Fale conosco
               </Button>

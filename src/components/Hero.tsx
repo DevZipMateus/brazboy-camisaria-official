@@ -34,15 +34,16 @@ const Hero = () => {
             <Button
               onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
               size="lg"
-              className="bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 text-lg font-semibold shadow-glow transition-smooth"
+              variant="cta"
+              className="px-8 py-4 text-lg font-semibold"
             >
               Solicitar orçamento
             </Button>
             <Button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              variant="outline"
+              variant="hero"
               size="lg"
-              className="border-white/60 text-white hover:bg-white/10 hover:text-white px-8 py-4 text-lg font-semibold transition-smooth"
+              className="px-8 py-4 text-lg font-semibold"
             >
               Ver produtos
             </Button>

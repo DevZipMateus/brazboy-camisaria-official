@@ -106,7 +106,8 @@ const Services = () => {
             <Button
               onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
               size="lg"
-              className="bg-gradient-primary hover:bg-primary-dark text-primary-foreground px-8 py-4 text-lg font-semibold shadow-glow"
+              variant="default"
+              className="px-8 py-4 text-lg font-semibold"
             >
               Solicitar catálogo
             </Button>
@@ -114,7 +115,7 @@ const Services = () => {
               onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
               variant="outline"
               size="lg"
-              className="border-primary/60 text-primary hover:bg-primary/10 hover:text-primary px-8 py-4 text-lg font-semibold"
+              className="px-8 py-4 text-lg font-semibold"
             >
               Falar com vendedor
             </Button>
