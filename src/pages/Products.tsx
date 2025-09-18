@@ -394,11 +394,11 @@ const Products = () => {
                           <CarouselContent>
                             {product.images.map((image, imageIndex) => (
                               <CarouselItem key={imageIndex}>
-                                <div className="aspect-square">
+                                <div className="aspect-[4/5] bg-muted/20 rounded-t-lg overflow-hidden">
                                   <img
                                     src={image}
                                     alt={`${product.name} - Imagem ${imageIndex + 1}`}
-                                    className="w-full h-full object-cover rounded-t-lg"
+                                    className="w-full h-full object-contain p-2"
                                     loading="lazy"
                                   />
                                 </div>
