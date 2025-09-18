@@ -11,7 +11,7 @@ const Footer = () => {
               <img 
                 src="/logo-braz-boy.png" 
                 alt="Braz Boy Camisaria" 
-                className="h-16 w-auto brightness-0 invert"
+                className="h-14 w-auto filter brightness-0 invert opacity-90"
               />
             </div>
             <p className="text-primary-foreground/80 mb-4 leading-relaxed">
