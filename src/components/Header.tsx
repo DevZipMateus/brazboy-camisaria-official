@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +16,17 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navigateToSection = (sectionId: string) => {
+    // Se estamos na página inicial, rola para a seção
+    if (location.pathname === '/') {
+      scrollToSection(sectionId);
+    } else {
+      // Se estamos em outra página, navega para home e depois rola
+      navigate('/');
+      setTimeout(() => scrollToSection(sectionId), 100);
+    }
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -35,42 +49,44 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img 
-              src="/logo-braz-boy.png" 
-              alt="Braz Boy Camisaria" 
-              className="h-12 w-auto"
-            />
+            <Link to="/">
+              <img 
+                src="/logo-braz-boy.png" 
+                alt="Braz Boy Camisaria" 
+                className="h-12 w-auto cursor-pointer"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <button
-                onClick={() => scrollToSection('hero')}
+                onClick={() => navigateToSection('hero')}
                 className="text-foreground hover:text-primary transition-smooth font-medium"
               >
                 Início
               </button>
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => navigateToSection('about')}
                 className="text-foreground hover:text-primary transition-smooth font-medium"
               >
                 Sobre nós
               </button>
-              <a
-                href="/produtos"
+              <Link
+                to="/produtos"
                 className="text-foreground hover:text-primary transition-smooth font-medium"
               >
                 Produtos
-              </a>
+              </Link>
               <button
-                onClick={() => scrollToSection('services')}
+                onClick={() => navigateToSection('services')}
                 className="text-foreground hover:text-primary transition-smooth font-medium"
               >
                 Serviços
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => navigateToSection('contact')}
                 className="text-foreground hover:text-primary transition-smooth font-medium"
               >
                 Contato
@@ -103,31 +119,32 @@ const Header = () => {
           <div className="md:hidden bg-background/95 backdrop-blur-md rounded-lg mt-2 p-4 shadow-elegant">
             <div className="px-2 pt-2 pb-3 space-y-3">
               <button
-                onClick={() => scrollToSection('hero')}
+                onClick={() => navigateToSection('hero')}
                 className="block text-foreground hover:text-primary transition-smooth font-medium w-full text-left"
               >
                 Início
               </button>
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => navigateToSection('about')}
                 className="block text-foreground hover:text-primary transition-smooth font-medium w-full text-left"
               >
                 Sobre nós
               </button>
-              <a
-                href="/produtos"
+              <Link
+                to="/produtos"
                 className="block text-foreground hover:text-primary transition-smooth font-medium w-full text-left"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Produtos
-              </a>
+              </Link>
               <button
-                onClick={() => scrollToSection('services')}
+                onClick={() => navigateToSection('services')}
                 className="block text-foreground hover:text-primary transition-smooth font-medium w-full text-left"
               >
                 Serviços
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => navigateToSection('contact')}
                 className="block text-foreground hover:text-primary transition-smooth font-medium w-full text-left"
               >
                 Contato
