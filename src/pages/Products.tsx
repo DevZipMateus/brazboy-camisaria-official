@@ -3,11 +3,59 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Shirt, Users, Baby, Star, Phone, Crown } from "lucide-react";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Products = () => {
+  // Componente de carrossel automático
+  const AutoCarousel = ({ images, productId }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+      if (images.length <= 1) return;
+      
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }, [images.length]);
+
+    return (
+      <div className="relative aspect-[4/5] bg-muted/20 rounded-t-lg overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out h-full"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((image, index) => (
+            <div key={index} className="flex-shrink-0 w-full h-full">
+              <img
+                src={image}
+                alt={`Produto ${productId} - Imagem ${index + 1}`}
+                className="w-full h-full object-contain p-2"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+        {images.length > 1 && (
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {images.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === currentIndex ? 'bg-primary' : 'bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   // Mapeamento das imagens por produto - URLs codificadas para espaços
   const productImages = {
     "careca-algodao": [
@@ -390,28 +438,7 @@ const Products = () => {
                       
                       {/* Product Image Carousel */}
                       <div className="relative mb-4">
-                        <Carousel className="w-full">
-                          <CarouselContent>
-                            {product.images.map((image, imageIndex) => (
-                              <CarouselItem key={imageIndex}>
-                                <div className="aspect-[4/5] bg-muted/20 rounded-t-lg overflow-hidden">
-                                  <img
-                                    src={image}
-                                    alt={`${product.name} - Imagem ${imageIndex + 1}`}
-                                    className="w-full h-full object-contain p-2"
-                                    loading="lazy"
-                                  />
-                                </div>
-                              </CarouselItem>
-                            ))}
-                          </CarouselContent>
-                          {product.images.length > 1 && (
-                            <>
-                              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
-                              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
-                            </>
-                          )}
-                        </Carousel>
+                        <AutoCarousel images={product.images} productId={product.id} />
                       </div>
                       
                       <CardHeader className="pb-4 relative z-10">
