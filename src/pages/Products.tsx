@@ -12,49 +12,45 @@ const Products = () => {
   // Componente de carrossel automático
   const AutoCarousel = ({ images, productId }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(true);
 
     useEffect(() => {
       if (images.length <= 1) return;
       
       const interval = setInterval(() => {
-        setCurrentIndex((prev) => prev + 1);
+        setCurrentIndex((prev) => {
+          // Cria um loop infinito suave voltando para 0 quando chega no final
+          return prev === images.length - 1 ? 0 : prev + 1;
+        });
       }, 3000);
 
       return () => clearInterval(interval);
     }, [images.length]);
 
-    useEffect(() => {
-      if (currentIndex === images.length) {
-        // Quando chegamos no final, aguardamos a transição e depois voltamos ao início sem transição
-        setTimeout(() => {
-          setIsTransitioning(false);
-          setCurrentIndex(0);
-        }, 500);
-      } else if (currentIndex === 0 && !isTransitioning) {
-        // Reativa a transição após voltar ao início
-        setTimeout(() => {
-          setIsTransitioning(true);
-        }, 50);
-      }
-    }, [currentIndex, images.length, isTransitioning]);
-
-    // Criamos um array com as imagens + primeira imagem duplicada no final
-    const extendedImages = [...images, images[0]];
+    if (!images || images.length === 0) {
+      return (
+        <div className="relative aspect-[4/5] bg-muted/20 rounded-t-lg overflow-hidden flex items-center justify-center">
+          <p className="text-muted-foreground">Imagem não disponível</p>
+        </div>
+      );
+    }
 
     return (
       <div className="relative aspect-[4/5] bg-muted/20 rounded-t-lg overflow-hidden">
         <div 
-          className={`flex h-full ${isTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
+          className="flex h-full transition-transform duration-1000 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {extendedImages.map((image, index) => (
+          {images.map((image, index) => (
             <div key={index} className="flex-shrink-0 w-full h-full">
               <img
                 src={image}
-                alt={`Produto ${productId} - Imagem ${(index % images.length) + 1}`}
+                alt={`Produto ${productId} - Imagem ${index + 1}`}
                 className="w-full h-full object-contain p-2"
                 loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src = '/placeholder.svg';
+                  console.log('Erro ao carregar imagem:', image);
+                }}
               />
             </div>
           ))}
@@ -65,7 +61,7 @@ const Products = () => {
               <div
                 key={index}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  index === (currentIndex % images.length) ? 'bg-primary' : 'bg-white/50'
+                  index === currentIndex ? 'bg-primary' : 'bg-white/50'
                 }`}
               />
             ))}
