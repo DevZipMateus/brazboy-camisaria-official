@@ -1,9 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Shirt, Users, Baby } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate = useNavigate();
+  
   const categories = [
     {
       icon: Shirt,
@@ -15,7 +20,12 @@ const Services = () => {
         "Polo lisa, floral e listrada",
         "Regata lisa, floral e listrada"
       ],
-      color: "bg-gradient-primary"
+      color: "bg-gradient-primary",
+      images: [
+        "/produtos/careca%20algodao/IMG-20250624-WA2149.jpg",
+        "/produtos/polo%20algodao/IMG-20250624-WA1994.jpg",
+        "/produtos/regata%20algodao/IMG-20250624-WA1957.jpg"
+      ]
     },
     {
       icon: Users,
@@ -27,7 +37,12 @@ const Services = () => {
         "Acabamento refinado",
         "Variadas opções de estampas"
       ],
-      color: "bg-gradient-accent"
+      color: "bg-gradient-accent",
+      images: [
+        "/produtos/polo%20feminina/IMG-20250624-WA2238.jpg",
+        "/produtos/polo%20feminina/IMG-20250624-WA2242.jpg",
+        "/produtos/polo%20feminina/IMG-20250624-WA2247.jpg"
+      ]
     },
     {
       icon: Baby,
@@ -39,9 +54,55 @@ const Services = () => {
         "Regata infantil",
         "Materiais adequados para crianças"
       ],
-      color: "bg-primary-light"
+      color: "bg-primary-light",
+      images: [
+        "/produtos/careca%20infantil/IMG-20250708-WA2213.jpg",
+        "/produtos/polo%20infantil/IMG-20250708-WA2177.jpg",
+        "/produtos/regata%20infantil/IMG-20250708-WA2191.jpg"
+      ]
     }
   ];
+
+  const AutoCarousel = ({ images, categoryIndex }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }, [images.length]);
+
+    return (
+      <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out h-full"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((image, index) => (
+            <div key={index} className="flex-shrink-0 w-full h-full">
+              <img
+                src={image}
+                alt={`Produto ${index + 1}`}
+                className="w-full h-full object-contain bg-secondary/10"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === currentIndex ? 'bg-primary' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <section id="services" className="py-20 bg-background">
@@ -67,6 +128,7 @@ const Services = () => {
               <div className={`absolute top-0 right-0 w-32 h-32 ${category.color} opacity-10 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500`}></div>
               
               <CardHeader className="text-center pb-4 relative z-10">
+                <AutoCarousel images={category.images} categoryIndex={index} />
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-full mb-4 shadow-glow mx-auto">
                   <category.icon className="h-8 w-8 text-primary-foreground" />
                 </div>
@@ -104,12 +166,12 @@ const Services = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
+              onClick={() => navigate('/produtos')}
               size="lg"
               variant="default"
               className="px-8 py-4 text-lg font-semibold"
             >
-              Solicitar catálogo
+              Ver produtos
             </Button>
             <Button
               onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
