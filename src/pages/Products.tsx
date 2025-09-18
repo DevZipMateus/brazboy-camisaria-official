@@ -8,140 +8,140 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Products = () => {
-  // Mapeamento das imagens por produto
+  // Mapeamento das imagens por produto - URLs codificadas para espaços
   const productImages = {
     "careca-algodao": [
-      "/produtos/careca algodao/IMG-20250624-WA2149.jpg",
-      "/produtos/careca algodao/IMG-20250624-WA2153.jpg",
-      "/produtos/careca algodao/IMG-20250624-WA2161.jpg",
-      "/produtos/careca algodao/IMG-20250624-WA2165.jpg",
-      "/produtos/careca algodao/IMG-20250624-WA2183.jpg"
+      "/produtos/careca%20algodao/IMG-20250624-WA2149.jpg",
+      "/produtos/careca%20algodao/IMG-20250624-WA2153.jpg",
+      "/produtos/careca%20algodao/IMG-20250624-WA2161.jpg",
+      "/produtos/careca%20algodao/IMG-20250624-WA2165.jpg",
+      "/produtos/careca%20algodao/IMG-20250624-WA2183.jpg"
     ],
     "careca-floral": [
-      "/produtos/careca floral/IMG-20250624-WA1932.jpg",
-      "/produtos/careca floral/IMG-20250624-WA1996.jpg",
-      "/produtos/careca floral/IMG-20250624-WA2044.jpg",
-      "/produtos/careca floral/IMG-20250624-WA2090.jpg",
-      "/produtos/careca floral/IMG-20250624-WA2099.jpg"
+      "/produtos/careca%20floral/IMG-20250624-WA1932.jpg",
+      "/produtos/careca%20floral/IMG-20250624-WA1996.jpg",
+      "/produtos/careca%20floral/IMG-20250624-WA2044.jpg",
+      "/produtos/careca%20floral/IMG-20250624-WA2090.jpg",
+      "/produtos/careca%20floral/IMG-20250624-WA2099.jpg"
     ],
     "careca-listra-fina": [
-      "/produtos/careca listra fina/IMG-20250624-WA2114.jpg",
-      "/produtos/careca listra fina/IMG-20250624-WA2120.jpg",
-      "/produtos/careca listra fina/IMG-20250624-WA2377.jpg",
-      "/produtos/careca listra fina/IMG-20250624-WA2381.jpg",
-      "/produtos/careca listra fina/IMG-20250624-WA2393.jpg"
+      "/produtos/careca%20listra%20fina/IMG-20250624-WA2114.jpg",
+      "/produtos/careca%20listra%20fina/IMG-20250624-WA2120.jpg",
+      "/produtos/careca%20listra%20fina/IMG-20250624-WA2377.jpg",
+      "/produtos/careca%20listra%20fina/IMG-20250624-WA2381.jpg",
+      "/produtos/careca%20listra%20fina/IMG-20250624-WA2393.jpg"
     ],
     "careca-listra-larga": [
-      "/produtos/careca listra larga/IMG-20250624-WA1939.jpg",
-      "/produtos/careca listra larga/IMG-20250624-WA2025.jpg",
-      "/produtos/careca listra larga/IMG-20250624-WA2059.jpg",
-      "/produtos/careca listra larga/IMG-20250624-WA2086.jpg",
-      "/produtos/careca listra larga/IMG-20250624-WA2101.jpg"
+      "/produtos/careca%20listra%20larga/IMG-20250624-WA1939.jpg",
+      "/produtos/careca%20listra%20larga/IMG-20250624-WA2025.jpg",
+      "/produtos/careca%20listra%20larga/IMG-20250624-WA2059.jpg",
+      "/produtos/careca%20listra%20larga/IMG-20250624-WA2086.jpg",
+      "/produtos/careca%20listra%20larga/IMG-20250624-WA2101.jpg"
     ],
     "careca-plus-size": [
-      "/produtos/careca plus size/IMG-20250708-WA2442.jpg",
-      "/produtos/careca plus size/IMG-20250708-WA2446.jpg",
-      "/produtos/careca plus size/IMG-20250708-WA2450.jpg",
-      "/produtos/careca plus size/IMG-20250708-WA2452.jpg",
-      "/produtos/careca plus size/IMG-20250708-WA2457.jpg"
+      "/produtos/careca%20plus%20size/IMG-20250708-WA2442.jpg",
+      "/produtos/careca%20plus%20size/IMG-20250708-WA2446.jpg",
+      "/produtos/careca%20plus%20size/IMG-20250708-WA2450.jpg",
+      "/produtos/careca%20plus%20size/IMG-20250708-WA2452.jpg",
+      "/produtos/careca%20plus%20size/IMG-20250708-WA2457.jpg"
     ],
     "polo-algodao": [
-      "/produtos/polo algodao/IMG-20250624-WA1994.jpg",
-      "/produtos/polo algodao/IMG-20250624-WA2042.jpg",
-      "/produtos/polo algodao/IMG-20250624-WA2051.jpg",
-      "/produtos/polo algodao/IMG-20250624-WA2054.jpg",
-      "/produtos/polo algodao/IMG-20250624-WA2057.jpg"
+      "/produtos/polo%20algodao/IMG-20250624-WA1994.jpg",
+      "/produtos/polo%20algodao/IMG-20250624-WA2042.jpg",
+      "/produtos/polo%20algodao/IMG-20250624-WA2051.jpg",
+      "/produtos/polo%20algodao/IMG-20250624-WA2054.jpg",
+      "/produtos/polo%20algodao/IMG-20250624-WA2057.jpg"
     ],
     "polo-floral": [
-      "/produtos/polo floral/IMG-20250624-WA1915.jpg",
-      "/produtos/polo floral/IMG-20250624-WA2037.jpg",
-      "/produtos/polo floral/IMG-20250624-WA2071.jpg",
-      "/produtos/polo floral/IMG-20250624-WA2076.jpg",
-      "/produtos/polo floral/IMG-20250624-WA2097.jpg"
+      "/produtos/polo%20floral/IMG-20250624-WA1915.jpg",
+      "/produtos/polo%20floral/IMG-20250624-WA2037.jpg",
+      "/produtos/polo%20floral/IMG-20250624-WA2071.jpg",
+      "/produtos/polo%20floral/IMG-20250624-WA2076.jpg",
+      "/produtos/polo%20floral/IMG-20250624-WA2097.jpg"
     ],
     "polo-listrado": [
-      "/produtos/polo listrado/IMG-20250711-WA1182.jpg",
-      "/produtos/polo listrado/IMG-20250711-WA1184.jpg",
-      "/produtos/polo listrado/IMG-20250711-WA1188.jpg",
-      "/produtos/polo listrado/IMG-20250711-WA1192.jpg",
-      "/produtos/polo listrado/IMG-20250711-WA1196.jpg"
+      "/produtos/polo%20listrado/IMG-20250711-WA1182.jpg",
+      "/produtos/polo%20listrado/IMG-20250711-WA1184.jpg",
+      "/produtos/polo%20listrado/IMG-20250711-WA1188.jpg",
+      "/produtos/polo%20listrado/IMG-20250711-WA1192.jpg",
+      "/produtos/polo%20listrado/IMG-20250711-WA1196.jpg"
     ],
     "polo-listrinha": [
-      "/produtos/polo listrinha/IMG-20250625-WA0440.jpg",
-      "/produtos/polo listrinha/IMG-20250625-WA0441.jpg",
-      "/produtos/polo listrinha/IMG-20250625-WA0443.jpg",
-      "/produtos/polo listrinha/IMG-20250625-WA0444.jpg",
-      "/produtos/polo listrinha/IMG-20250625-WA0445.jpg"
+      "/produtos/polo%20listrinha/IMG-20250625-WA0440.jpg",
+      "/produtos/polo%20listrinha/IMG-20250625-WA0441.jpg",
+      "/produtos/polo%20listrinha/IMG-20250625-WA0443.jpg",
+      "/produtos/polo%20listrinha/IMG-20250625-WA0444.jpg",
+      "/produtos/polo%20listrinha/IMG-20250625-WA0445.jpg"
     ],
     "polo-piquet-com-bolso": [
-      "/produtos/polo piquet com bolso/IMG-20250624-WA2192.jpg",
-      "/produtos/polo piquet com bolso/IMG-20250624-WA2197.jpg",
-      "/produtos/polo piquet com bolso/IMG-20250624-WA2200.jpg",
-      "/produtos/polo piquet com bolso/IMG-20250624-WA2211.jpg",
-      "/produtos/polo piquet com bolso/IMG-20250624-WA2235.jpg"
+      "/produtos/polo%20piquet%20com%20bolso/IMG-20250624-WA2192.jpg",
+      "/produtos/polo%20piquet%20com%20bolso/IMG-20250624-WA2197.jpg",
+      "/produtos/polo%20piquet%20com%20bolso/IMG-20250624-WA2200.jpg",
+      "/produtos/polo%20piquet%20com%20bolso/IMG-20250624-WA2211.jpg",
+      "/produtos/polo%20piquet%20com%20bolso/IMG-20250624-WA2235.jpg"
     ],
     "polo-piquet": [
-      "/produtos/polo piquet/IMG-20250624-WA2293.jpg",
-      "/produtos/polo piquet/IMG-20250624-WA2297.jpg",
-      "/produtos/polo piquet/IMG-20250624-WA2301.jpg",
-      "/produtos/polo piquet/IMG-20250624-WA2305.jpg",
-      "/produtos/polo piquet/IMG-20250624-WA2312.jpg"
+      "/produtos/polo%20piquet/IMG-20250624-WA2293.jpg",
+      "/produtos/polo%20piquet/IMG-20250624-WA2297.jpg",
+      "/produtos/polo%20piquet/IMG-20250624-WA2301.jpg",
+      "/produtos/polo%20piquet/IMG-20250624-WA2305.jpg",
+      "/produtos/polo%20piquet/IMG-20250624-WA2312.jpg"
     ],
     "polo-plus-size": [
-      "/produtos/polo plus size/IMG-20240529-WA4514.jpg",
-      "/produtos/polo plus size/IMG-20240529-WA4516.jpg",
-      "/produtos/polo plus size/IMG-20240529-WA4517.jpg",
-      "/produtos/polo plus size/IMG-20240529-WA4520.jpg",
-      "/produtos/polo plus size/IMG-20240529-WA4522.jpg"
+      "/produtos/polo%20plus%20size/IMG-20240529-WA4514.jpg",
+      "/produtos/polo%20plus%20size/IMG-20240529-WA4516.jpg",
+      "/produtos/polo%20plus%20size/IMG-20240529-WA4517.jpg",
+      "/produtos/polo%20plus%20size/IMG-20240529-WA4520.jpg",
+      "/produtos/polo%20plus%20size/IMG-20240529-WA4522.jpg"
     ],
     "regata-algodao": [
-      "/produtos/regata algodao/IMG-20250624-WA1957.jpg",
-      "/produtos/regata algodao/IMG-20250624-WA2030.jpg",
-      "/produtos/regata algodao/IMG-20250624-WA2066.jpg",
-      "/produtos/regata algodao/IMG-20250624-WA2075.jpg",
-      "/produtos/regata algodao/IMG-20250624-WA2087.jpg"
+      "/produtos/regata%20algodao/IMG-20250624-WA1957.jpg",
+      "/produtos/regata%20algodao/IMG-20250624-WA2030.jpg",
+      "/produtos/regata%20algodao/IMG-20250624-WA2066.jpg",
+      "/produtos/regata%20algodao/IMG-20250624-WA2075.jpg",
+      "/produtos/regata%20algodao/IMG-20250624-WA2087.jpg"
     ],
     "regata-floral": [
-      "/produtos/regata floral/IMG-20250624-WA2062.jpg",
-      "/produtos/regata floral/IMG-20250624-WA2064.jpg",
-      "/produtos/regata floral/IMG-20250624-WA2070.jpg",
-      "/produtos/regata floral/IMG-20250624-WA2079.jpg",
-      "/produtos/regata floral/IMG-20250624-WA2081.jpg"
+      "/produtos/regata%20floral/IMG-20250624-WA2062.jpg",
+      "/produtos/regata%20floral/IMG-20250624-WA2064.jpg",
+      "/produtos/regata%20floral/IMG-20250624-WA2070.jpg",
+      "/produtos/regata%20floral/IMG-20250624-WA2079.jpg",
+      "/produtos/regata%20floral/IMG-20250624-WA2081.jpg"
     ],
     "uv-protecao": [
-      "/produtos/uv proteção/IMG-20250624-WA1860.jpg",
-      "/produtos/uv proteção/IMG-20250624-WA2127.jpg",
-      "/produtos/uv proteção/IMG-20250624-WA2133.jpg",
-      "/produtos/uv proteção/IMG-20250624-WA2137.jpg",
-      "/produtos/uv proteção/IMG-20250624-WA2143.jpg"
+      "/produtos/uv%20proteção/IMG-20250624-WA1860.jpg",
+      "/produtos/uv%20proteção/IMG-20250624-WA2127.jpg",
+      "/produtos/uv%20proteção/IMG-20250624-WA2133.jpg",
+      "/produtos/uv%20proteção/IMG-20250624-WA2137.jpg",
+      "/produtos/uv%20proteção/IMG-20250624-WA2143.jpg"
     ],
     "polo-feminina": [
-      "/produtos/polo feminina/IMG-20250624-WA2238.jpg",
-      "/produtos/polo feminina/IMG-20250624-WA2242.jpg",
-      "/produtos/polo feminina/IMG-20250624-WA2247.jpg",
-      "/produtos/polo feminina/IMG-20250624-WA2253.jpg",
-      "/produtos/polo feminina/IMG-20250624-WA2262.jpg"
+      "/produtos/polo%20feminina/IMG-20250624-WA2238.jpg",
+      "/produtos/polo%20feminina/IMG-20250624-WA2242.jpg",
+      "/produtos/polo%20feminina/IMG-20250624-WA2247.jpg",
+      "/produtos/polo%20feminina/IMG-20250624-WA2253.jpg",
+      "/produtos/polo%20feminina/IMG-20250624-WA2262.jpg"
     ],
     "careca-infantil": [
-      "/produtos/careca infantil/IMG-20250708-WA2213.jpg",
-      "/produtos/careca infantil/IMG-20250708-WA2217.jpg",
-      "/produtos/careca infantil/IMG-20250708-WA2219.jpg",
-      "/produtos/careca infantil/IMG-20250708-WA2220.jpg",
-      "/produtos/careca infantil/IMG-20250708-WA2222.jpg"
+      "/produtos/careca%20infantil/IMG-20250708-WA2213.jpg",
+      "/produtos/careca%20infantil/IMG-20250708-WA2217.jpg",
+      "/produtos/careca%20infantil/IMG-20250708-WA2219.jpg",
+      "/produtos/careca%20infantil/IMG-20250708-WA2220.jpg",
+      "/produtos/careca%20infantil/IMG-20250708-WA2222.jpg"
     ],
     "polo-infantil": [
-      "/produtos/polo infantil/IMG-20250708-WA2177.jpg",
-      "/produtos/polo infantil/IMG-20250708-WA2182.jpg",
-      "/produtos/polo infantil/IMG-20250708-WA2184.jpg",
-      "/produtos/polo infantil/IMG-20250708-WA2186.jpg",
-      "/produtos/polo infantil/IMG-20250708-WA2188.jpg"
+      "/produtos/polo%20infantil/IMG-20250708-WA2177.jpg",
+      "/produtos/polo%20infantil/IMG-20250708-WA2182.jpg",
+      "/produtos/polo%20infantil/IMG-20250708-WA2184.jpg",
+      "/produtos/polo%20infantil/IMG-20250708-WA2186.jpg",
+      "/produtos/polo%20infantil/IMG-20250708-WA2188.jpg"
     ],
     "regata-infantil": [
-      "/produtos/regata infantil/IMG-20250708-WA2191.jpg",
-      "/produtos/regata infantil/IMG-20250708-WA2196.jpg",
-      "/produtos/regata infantil/IMG-20250708-WA2199.jpg",
-      "/produtos/regata infantil/IMG-20250708-WA2201.jpg",
-      "/produtos/regata infantil/IMG-20250708-WA2230.jpg"
+      "/produtos/regata%20infantil/IMG-20250708-WA2191.jpg",
+      "/produtos/regata%20infantil/IMG-20250708-WA2196.jpg",
+      "/produtos/regata%20infantil/IMG-20250708-WA2199.jpg",
+      "/produtos/regata%20infantil/IMG-20250708-WA2201.jpg",
+      "/produtos/regata%20infantil/IMG-20250708-WA2230.jpg"
     ],
     "menegotti": [
       "/produtos/menegotti/IMG-20250618-WA1390.jpg",
