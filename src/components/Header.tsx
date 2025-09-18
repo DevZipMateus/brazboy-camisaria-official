@@ -57,11 +57,17 @@ const Header = () => {
               >
                 Sobre nós
               </button>
+              <a
+                href="/produtos"
+                className="text-foreground hover:text-primary transition-smooth font-medium"
+              >
+                Produtos
+              </a>
               <button
                 onClick={() => scrollToSection('services')}
                 className="text-foreground hover:text-primary transition-smooth font-medium"
               >
-                Produtos
+                Serviços
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
@@ -108,11 +114,17 @@ const Header = () => {
               >
                 Sobre nós
               </button>
+              <a
+                href="/produtos"
+                className="block text-foreground hover:text-primary transition-smooth font-medium w-full text-left"
+              >
+                Produtos
+              </a>
               <button
                 onClick={() => scrollToSection('services')}
                 className="block text-foreground hover:text-primary transition-smooth font-medium w-full text-left"
               >
-                Produtos
+                Serviços
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
