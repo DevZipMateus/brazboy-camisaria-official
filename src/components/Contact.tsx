@@ -60,22 +60,39 @@ const Contact = () => {
           {contactInfo.map((info, index) => (
             <Card 
               key={index}
-              className={`border-0 shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-1 bg-background/80 backdrop-blur-sm ${
+              className={`border-0 shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm ${
                 info.action ? 'cursor-pointer' : ''
+              } ${
+                info.title === 'Box no Moda Center' 
+                  ? 'bg-gradient-primary text-primary-foreground ring-2 ring-accent/50' 
+                  : 'bg-background/80'
               }`}
               onClick={info.action || undefined}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardHeader className="text-center pb-4">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-primary rounded-full mb-4 shadow-glow mx-auto">
-                  <info.icon className="h-7 w-7 text-primary-foreground" />
+              <CardHeader className="text-center pb-4 relative">
+                {info.title === 'Box no Moda Center' && (
+                  <div className="absolute -top-3 -right-3 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                    NOVO
+                  </div>
+                )}
+                <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-4 shadow-glow mx-auto ${
+                  info.title === 'Box no Moda Center' 
+                    ? 'bg-primary-foreground text-primary' 
+                    : 'bg-gradient-primary text-primary-foreground'
+                }`}>
+                  <info.icon className="h-7 w-7" />
                 </div>
-                <CardTitle className="text-lg font-semibold text-foreground">
+                <CardTitle className={`text-lg font-semibold ${
+                  info.title === 'Box no Moda Center' ? 'text-primary-foreground' : 'text-foreground'
+                }`}>
                   {info.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
+                <p className={`whitespace-pre-line leading-relaxed ${
+                  info.title === 'Box no Moda Center' ? 'text-primary-foreground/90' : 'text-muted-foreground'
+                }`}>
                   {info.content}
                 </p>
               </CardContent>
