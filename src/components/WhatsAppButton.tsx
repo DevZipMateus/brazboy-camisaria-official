@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5581994770239', '_blank');
+    const message = encodeURIComponent('Olá! Vim através do site da Braz Boy Camisaria e gostaria de mais informações.');
+    window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
   };
 
   return (

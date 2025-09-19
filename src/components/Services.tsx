@@ -173,7 +173,10 @@ const Services = () => {
               Ver produtos
             </Button>
             <Button
-              onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
+              onClick={() => {
+                const message = encodeURIComponent('Olá! Vim através do site da Braz Boy Camisaria e gostaria de falar com um vendedor.');
+                window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
+              }}
               variant="outline"
               size="lg"
               className="px-8 py-4 text-lg font-semibold"

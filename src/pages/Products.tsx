@@ -476,7 +476,10 @@ const Products = () => {
                         </div>
                         
                         <Button
-                          onClick={() => window.open(`https://wa.me/5581994770239?text=Olá! Gostaria de saber mais sobre o produto: ${product.name}`, '_blank')}
+                          onClick={() => {
+                            const message = encodeURIComponent(`Olá! Vim através do site da Braz Boy Camisaria e gostaria de saber mais sobre o produto: ${product.name}`);
+                            window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
+                          }}
                           variant="outline"
                           className="w-full"
                         >
@@ -504,7 +507,10 @@ const Products = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
+                onClick={() => {
+                  const message = encodeURIComponent('Olá! Vim através do site da Braz Boy Camisaria e gostaria de solicitar um catálogo completo.');
+                  window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
+                }}
                 size="lg"
                 variant="default"
                 className="px-8 py-4 text-lg font-semibold"
@@ -512,7 +518,10 @@ const Products = () => {
                 Solicitar catálogo completo
               </Button>
               <Button
-                onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
+                onClick={() => {
+                  const message = encodeURIComponent('Olá! Vim através do site da Braz Boy Camisaria e gostaria de falar com um vendedor.');
+                  window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
+                }}
                 variant="outline"
                 size="lg"
                 className="px-8 py-4 text-lg font-semibold"

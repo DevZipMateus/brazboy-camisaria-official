@@ -92,7 +92,10 @@ const Header = () => {
                 Contato
               </button>
               <Button 
-                onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
+                onClick={() => {
+                  const message = encodeURIComponent('Olá! Vim através do site da Braz Boy Camisaria e gostaria de falar com vocês.');
+                  window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
+                }}
                 variant="default"
                 className="bg-white text-primary hover:bg-gray-100"
               >
@@ -150,7 +153,10 @@ const Header = () => {
                 Contato
               </button>
               <Button 
-                onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
+                onClick={() => {
+                  const message = encodeURIComponent('Olá! Vim através do site da Braz Boy Camisaria e gostaria de falar com vocês.');
+                  window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
+                }}
                 variant="default"
                 className="w-full bg-white text-primary hover:bg-gray-100 mt-4"
               >

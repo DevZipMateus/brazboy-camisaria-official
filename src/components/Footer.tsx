@@ -24,7 +24,12 @@ const Footer = () => {
               <div className="flex items-start">
                 <Phone className="h-5 w-5 mr-3 mt-0.5 text-accent-light" />
                 <div>
-                  <a href="https://wa.me/5581994770239" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-light transition-colors">
+                  <a 
+                    href="https://wa.me/5581994770239?text=Olá! Vim através do site da Braz Boy Camisaria e gostaria de falar com vocês."
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-primary-foreground/80 hover:text-accent-light transition-colors"
+                  >
                     (81) 99477-0239
                   </a>
                 </div>

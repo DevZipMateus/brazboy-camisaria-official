@@ -23,7 +23,10 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button onClick={() => window.open('https://wa.me/5581994770239', '_blank')} size="lg" variant="cta" className="px-8 py-4 text-lg font-semibold">
+            <Button onClick={() => {
+              const message = encodeURIComponent('Olá! Vim através do site da Braz Boy Camisaria e gostaria de solicitar um orçamento.');
+              window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
+            }} size="lg" variant="cta" className="px-8 py-4 text-lg font-semibold">
               Solicitar orçamento
             </Button>
             <Button onClick={() => document.getElementById('services')?.scrollIntoView({

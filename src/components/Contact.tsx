@@ -8,7 +8,10 @@ const Contact = () => {
       icon: Phone,
       title: "Telefone",
       content: "(81) 99477-0239",
-      action: () => window.open('https://wa.me/5581994770239', '_blank')
+      action: () => {
+        const message = encodeURIComponent('Olá! Vim através do site da Braz Boy Camisaria e gostaria de mais informações.');
+        window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
+      }
     },
     {
       icon: Mail,
@@ -128,7 +131,10 @@ const Contact = () => {
             Entre em contato conosco agora mesmo!
           </p>
           <Button
-            onClick={() => window.open('https://wa.me/5581994770239', '_blank')}
+            onClick={() => {
+              const message = encodeURIComponent('Olá! Vim através do site da Braz Boy Camisaria e gostaria de ser parceiro/trabalhar juntos.');
+              window.open(`https://wa.me/5581994770239?text=${message}`, '_blank');
+            }}
             size="lg"
             variant="accent"
             className="px-8 py-4 text-lg font-semibold"
