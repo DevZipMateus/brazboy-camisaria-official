@@ -23,6 +23,12 @@ const Contact = () => {
       action: () => window.open('https://www.google.com/maps/dir//Rua+Projetada+D+-+Taquaritinga+do+Norte,+PE,+55790-000/@-7.9044664,-36.0881391,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x7a97b11584365bf:0x5b9d5d62a7489b18!2m2!1d-36.0469394!2d-7.9045534?entry=ttu&g_ep=EgoyMDI1MDkwNy4wIKXMDSoASAFQAw%3D%3D', '_blank')
     },
     {
+      icon: MapPin,
+      title: "Box no Moda Center",
+      content: "Setor Branco, Rua K\nBox 75 e 76\nSanta Cruz do Capibaribe - PE",
+      action: () => window.open('https://www.google.com/maps/search/Moda+Center+Santa+Cruz+do+Capibaribe+PE', '_blank')
+    },
+    {
       icon: Clock,
       title: "Horário de funcionamento",
       content: "Segunda a sexta\ndas 7h às 17h",
