@@ -34,8 +34,7 @@ const Services = () => {
       items: [
         "Polo feminina",
         "Modelos exclusivos para o público feminino",
-        "Acabamento refinado",
-        "Variadas opções de estampas"
+        "Acabamento refinado"
       ],
       color: "bg-gradient-accent",
       images: [
