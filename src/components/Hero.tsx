@@ -14,7 +14,7 @@ const Hero = () => {
             <img 
               src="/logo-braz-boy.png" 
               alt="Braz Boy Camisaria" 
-              className="mx-auto h-32 w-auto md:h-40 mb-6"
+              className="mx-auto h-48 w-auto md:h-64 lg:h-72 mb-6"
             />
           </div>
           
