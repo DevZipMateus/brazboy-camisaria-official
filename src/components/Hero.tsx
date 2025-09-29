@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center animate-fade-in">
           <div className="mb-8">
-            <img src="/logo-braz-boy.png" alt="Braz Boy Camisaria" className="mx-auto h-48 w-auto md:h-64 lg:h-72 mb-6" />
+            <img src="/logo-braz-boy-new.png" alt="Braz Boy Camisaria" className="mx-auto h-48 w-auto md:h-64 lg:h-72 mb-6" />
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
