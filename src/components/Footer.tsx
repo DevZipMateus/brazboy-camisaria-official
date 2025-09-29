@@ -6,7 +6,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <img src="/logo-braz-boy.png" alt="Braz Boy Camisaria" className="h-12 w-auto" />
+              <img src="/logo-braz-boy-new.png" alt="Braz Boy Camisaria" className="h-12 w-auto" />
             </div>
             <p className="text-primary-foreground/80 mb-4 leading-relaxed">
               Qualidade que valoriza quem veste. Oferecemos camisas de excelência, 
