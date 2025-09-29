@@ -20,7 +20,7 @@ const Contact = () => {
   }, {
     icon: MapPin,
     title: "Box no Moda Center",
-    content: "Setor Branco, Rua K\nBox 75 e 76\nSanta Cruz do Capibaribe - PE",
+    content: "no calçadão\nSetor Branco, Rua K\nBox 75 e 76\nSanta Cruz do Capibaribe - PE",
     action: () => window.open('https://www.google.com/maps/search/Moda+Center+Santa+Cruz+do+Capibaribe+PE', '_blank')
   }, {
     icon: Clock,
